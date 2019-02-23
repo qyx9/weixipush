@@ -1,0 +1,70 @@
+
+.circle {
+	padding-top:64rpx;
+	height: 4000rpx;
+}
+.cirbg{
+	width: 100%;
+	background-color: #FFFFFF;
+	height: 64rpx;
+	position: fixed;
+	top: 0;
+}
+.featitle{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	font-size: 30rpx;
+	padding: 0 40rpx;
+	width:100%;
+	height: 58rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.featitle .left{
+	width: 30%;
+	height: 58rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.featitle .left>text{
+	width: 40;
+	padding-top: 14rpx;
+}
+.featitle .left>image{
+	width: 58rpx;
+	height: 58rpx;
+}
+/* .featitle .right{
+	width: 30%;
+	text-align:center;
+	height: 40upx;
+	border:2upx #CCCCCC solid;
+	border-radius: 24upx;
+} */
+

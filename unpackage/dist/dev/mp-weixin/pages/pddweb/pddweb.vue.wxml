@@ -1,0 +1,1 @@
+<template name="b24c81ba"><view class="_view b24c81ba"><web-view src="{{dataurl}}" class="_web-view b24c81ba"></web-view></view></template>

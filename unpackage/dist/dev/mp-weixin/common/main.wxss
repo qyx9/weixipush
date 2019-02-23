@@ -1,0 +1,65 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+.shop>image{
+		height: 156rpx;
+		width: 100%;
+}
+.scrollmenu{
+		width: 100%;
+		height: 112rpx;
+		background-color: #FFFFFF;
+}
+.scrollview{
+		width: 33.33%;
+		height: 112rpx;
+		line-height: 112rpx;
+		font-size: 28rpx;
+		text-align: center;
+		display: inline-block;
+}
+.actives {
+		color: #FFD305;
+		text-decoration: underline;
+}
+.decscmenu{
+		border-bottom:2rpx #EEEEEE solid;
+}
+.foodlist{
+			width: 100%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: row;
+			    -ms-flex-direction: row;
+			        flex-direction: row;
+			-webkit-flex-wrap: wrap;
+			    -ms-flex-wrap: wrap;
+			        flex-wrap: wrap;
+			-webkit-box-pack: justify;
+			-webkit-justify-content: space-between;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+}
+.menumsg{
+			background-color: #cccccc;
+			width:20%;
+			height: 120rpx;
+}
+

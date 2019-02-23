@@ -1,0 +1,37 @@
+	.shop>image{
+		height: 156upx;
+		width: 100%;
+	}
+	 .scrollmenu{
+		width: 100%;
+		height: 112upx;
+		background-color: #FFFFFF;
+		
+	}
+	 .scrollview{
+		width: 33.33%;
+		height: 112upx;
+		line-height: 112upx;
+		font-size: 28upx;
+		text-align: center;
+		display: inline-block;
+	}
+	 .actives {
+		color: #FFD305;
+		text-decoration: underline;
+	}
+	.decscmenu{
+		border-bottom:2upx #EEEEEE solid;
+	}
+	.foodlist{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	.menumsg{
+			background-color: #cccccc;
+			width:20%;
+			height: 120upx;
+			}

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bar/bar",
+    "pages/market/market",
+    "pages/circle/circle",
+    "pages/personal/personal",
+    "pages/HM-search/HM-search",
+    "pages/productmess/productmess",
+    "pages/pddweb/pddweb",
+    "pages/login/login",
+    "pages/ordermess/ordermess"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFD305",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/bar/bar",
+        "iconPath": "static/bar.png",
+        "selectedIconPath": "static/bar2.png",
+        "text": "多客热销"
+      },
+      {
+        "pagePath": "pages/market/market",
+        "iconPath": "static/market2.png",
+        "selectedIconPath": "static/market.png",
+        "text": "全网热销"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "iconPath": "static/circle.png",
+        "selectedIconPath": "static/circle2.png",
+        "text": "多客圈"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "static/person2.png",
+        "selectedIconPath": "static/person.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxcbe110fu2xaxedfu",
+    "wxfb1ff0f3u0abe913",
+    "wxc1b5d81exdad1efe",
+    "wxu8caa30cd32c1fb9",
+    "wx52axxb89fx3xe23c",
+    "wx32540bd863b27570"
+  ]
+}

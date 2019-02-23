@@ -1,0 +1,6 @@
+<import src="/pages/recommend/recommend.vue.wxml" />
+<import src="/pages/food/food.vue.wxml" />
+<import src="/pages/infant/infant.vue.wxml" />
+<import src="/pages/fruits/fruits.vue.wxml" />
+<import src="/pages/costume/costume.vue.wxml" />
+

@@ -1,0 +1,14 @@
+
+.banner{
+	width: 100%;
+}
+.banner>image{
+	width: 100%;
+}
+.decscmenu{
+	color:#ACACAC;
+}
+.scrollview{
+	font-size: 36rpx;
+}
+
