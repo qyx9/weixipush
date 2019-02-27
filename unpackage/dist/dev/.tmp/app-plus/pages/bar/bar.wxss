@@ -1,0 +1,144 @@
+.bar {
+  height: 4000rpx;
+  padding-top: 140rpx;
+}
+.hours {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20rpx 5%;
+  width: 90%;
+  height: 60rpx;
+  font-size: 32rpx;
+  background-color: #FEFEEA;
+  border: 2rpx solid #FFD350;
+  border-radius: 30rpx;
+  color: #FFD559;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+.hlist {
+  text-align: center;
+  line-height: 60rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33.33333%;
+  height: 56rpx;
+}
+.hourstyle {
+  border-radius: 26rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FFCB00), to(#FEA513));
+  background: -o-linear-gradient(left, #FFCB00, #FEA513);
+  background: linear-gradient(to right, #FFCB00, #FEA513);
+  color: #FFFFFF;
+}
+.goodList {
+  width: 100%;
+  height: 160rpx;
+  margin-bottom: 80rpx;
+}
+.hproduct {
+  width: 100%;
+  height: 160rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hproduct .num {
+  width: 10%;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 44rpx;
+  height: 44rpx;
+  width: 44rpx;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFD206), to(#FEA828));
+  background: -o-linear-gradient(#FFD206, #FEA828);
+  background: linear-gradient(#FFD206, #FEA828);
+}
+.hproduct > image {
+  width: 30%;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+.hproduct .hmsg {
+  width: 60%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24rpx;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.hproduct .hmsg .rollprice {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hproduct .hmsg .rollprice .price {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.hproduct .hmsg .rollprice .rollmall {
+  width: 50%;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #FFFFFF;
+  background: -webkit-gradient(linear, left top, right top, from(#FE877B), to(#DC505D));
+  background: -o-linear-gradient(left, #FE877B, #DC505D);
+  background: linear-gradient(to right, #FE877B, #DC505D);
+  border-radius: 10rpx;
+}
+

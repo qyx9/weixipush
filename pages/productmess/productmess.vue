@@ -9,7 +9,7 @@
 		</view>
 		<view class="jiage">
 			<view class="jflex">
-				<text>劵￥0</text>
+				<text>劵￥{{data.coupon_min_order_amount/100}}</text>
 				<text>原价￥{{data.min_normal_price/100}}</text>
 			</view>
 			<view class="jflex">
@@ -34,8 +34,8 @@
 			<text>立即领卷</text>
 		</view>
 		<view class="rollCount">
-		   <text>总优惠卷{{data.coupon_total_quantity}}</text>	
-		   <text>剩余张{{data.coupon_remain_quantity}}</text>	
+		   <text>总优惠卷{{data.coupon_total_quantity==null?0:data.coupon_total_quantity}}</text>	
+		   <text>剩余张{{data.coupon_remain_quantity==null?0:data.coupon_remain_quantity}}</text>	
 		</view>
 		<view class="goodscore">
 			<view class="scoretitle">
@@ -80,13 +80,13 @@
 		<!-- 商品评价 -->
 		<view class="reviews">
 			<text>商品评价</text>
-			<view class="allmsg" @click="lookall"><text>查看全部></text></view>
+			<view class="allmsg" @click="lookall"><text>{{look==false?'查看全部>':'收起评论V'}}</text></view>
 		</view>
 		<view class="userReviews" v-show="look">用户评论</view>
 		<!-- 商品信息 -->
 		<view class="gooddesc">
 			<!-- 商品名 -->
-			<view><text>{{data.goods_name}}</text></view>
+			<view><text>{{data.goods_desc}}</text></view>
 			<view class="descimg" v-for="(item,index) in bannerdata" :key="index">
 				<image :src="item" mode="widthFix" @click="preimg(item)"></image>
 			</view>

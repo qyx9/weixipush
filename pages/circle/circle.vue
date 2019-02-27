@@ -7,7 +7,7 @@
 					<image src="../../static/icons.png" mode="widthFix"></image>
 					<text>小编推荐</text>
 				</view>
-				<button class="right" @click="share">一键分享</button>
+				<button class="right" @click="shareimg">一键分享</button>
 			</view>
 			
 		</view>
@@ -25,8 +25,24 @@
 
 		},
 		methods: {
-           share(){
-			   
+           shareimg(){
+			   // 发起用户授权
+			   uni.getSetting({
+				success(res) {
+					if(!res.authSetting['scope.writePhotosAlbum']){
+						uni.authorize({
+							scope:'scope.writePhotosAlbum',
+							success() {
+								console.log('授权成功')
+							}
+						})
+					}else{
+						uni.navigateTo({
+							url:'../shareimg/shareimg'
+						})
+					}
+				}
+			   })
 		   }
 		}
 	}

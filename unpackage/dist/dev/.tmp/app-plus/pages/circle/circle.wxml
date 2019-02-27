@@ -1,0 +1,2 @@
+<import src="./circle.vue.wxml" />
+    <template is="21e0a4ba" data="{{ ...$root['0'], $root }}"/>

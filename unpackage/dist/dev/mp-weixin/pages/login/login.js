@@ -125,11 +125,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       userImg: '',
-      userName: '' };
+      userName: '',
+      parentid: '' };
 
   },
   onLoad: function onLoad() {
-
+    this.parentid = uni.getStorageSync('partId');
   },
   methods: {
     logins: function logins() {
@@ -146,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
       uni.setStorageSync('userimgUrl', userimgUrl);
       this.userImg = uni.getStorageSync('userimgUrl');
       // 存储用户昵称
-      uni.setStorageSync('userName', this.userName);
+      uni.setStorageSync('userName', result.mp.detail.userInfo.nickName);
       if (result.detail.errMsg !== 'getUserInfo:ok') {
         uni.showModal({
           title: '获取用户信息失败',
@@ -169,17 +170,21 @@ __webpack_require__.r(__webpack_exports__);
                 console.log(JSON.parse(res.data));
                 var weixiOpenId = JSON.parse(res.data).openid;
                 // 存储openid
+                console.log('请求到openid', weixiOpenId);
                 uni.setStorageSync('weixiOpenId', weixiOpenId);
                 var name = uni.getStorageSync('userName');
+                console.log('请求到name', name);
                 var parentid = uni.getStorageSync('partId');
+                console.log('请求到partId', parentid);
                 uni.request({
-                  url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid=' + weixiOpenId + '&name=' + name + '&parentid=' + parentid,
+                  url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid=' + weixiOpenId + '&name=' + name + '&parentid=' + that.parentid,
                   method: 'GET',
                   success: function success(res) {
-                    console.log(res.data);
+                    console.log("返回的数据:", res.data);
                     uni.setStorageSync("userId", res.data.data.user_id);
                     that.userId = res.data.data.user_id;
                     uni.setStorageSync("parentId", res.data.data.parent_id);
+                    // 返回原页面
                     uni.navigateBack();
                   } });
 
@@ -191,7 +196,11 @@ __webpack_require__.r(__webpack_exports__);
       this.hasUserInfo = true;
       this.userInfo = result.detail.userInfo;
       console.log(this.userInfo);
-    } } };exports.default = _default;
+    } },
+
+  onShow: function onShow() {
+    this.parentid = uni.getStorageSync('partId');
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),

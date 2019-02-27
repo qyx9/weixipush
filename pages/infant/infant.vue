@@ -1,7 +1,7 @@
 <template>
 	<view class="food">
 		<view class="foodlist">
-			<view class="menumsg" v-for="(item,index) in data" :key="index">{{item}}</view>
+			<view class="menumsg" v-for="(item,index) in propsdata==''?data:propsdata" :key="index">{{item.opt_name}}</view>
 		</view>
 		<view class="shop">
 			<image src="../../static/shop2.png" mode="widthFix"></image>
@@ -36,6 +36,15 @@
 				product:[1,2,3,4,5]
 			}
 		},
+		props:{
+			propsdata:{
+				type:Object,
+				default:function(e){
+					return {}
+				}
+			}
+		}
+		,
 		methods:{
 			menuclicks(i){
 				this.Tabindex=i;

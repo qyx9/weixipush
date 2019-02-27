@@ -20,17 +20,20 @@
 		<view class="bg"></view>
 		<view class="decscmenu">
 			<scroll-view scroll-x id="tabmenu" class="scrollmenu">
-				<view class="scrollview" v-for="(item,index) in descmenu" :key="index" @click="menuclick(index)" 
+				<view class="scrollview" v-for="(item,index) in descmenu" :key="index" @click="menuclick(item,index)" 
 				:class="Tabindex==index?'actives':''">{{item.name}}</view>
 			</scroll-view>
 		</view>
 		<view class="porduct">
-			<view class="productList" v-for="(item,index) in product" :key="index">
-				<image src="../../static/product.png" mode="widthFix"></image>
-				<view class="msg">台湾脆梨</view>
+			<view class="productList" v-for="(item,index) in goodList" :key="index" @click="goods(item)">
+				<image :src="item.goods_thumbnail_url" mode="widthFix"></image>
+				<view class="msg">{{item.goods_name}}</view>
 			</view>
 		</view>	
-		<navigator url="../login/login">登录页面</navigator>
+		<navigator url="../testbar/testbar">testbar</navigator>
+		<navigator url="../shareimg/shareimg">shareimg</navigator>
+		<navigator url="../glance-glanceShopClassify/glance-glanceShopClassify">glance-glanceShopClassify</navigator>
+		<navigator url="../gooList/gooList">gooList</navigator>
 		今日推荐
 	</view>
 </template>
@@ -40,18 +43,35 @@
 		data(){
 			return{
 				descmenu:[
-					{name:"综合"},
-		            {name:"价格"},
-					{name:"销量"}
+					{name:"综合",num:0},
+		            {name:"价格",num:3},
+					{name:"销量",num:6}
 				],
 				Tabindex:0,
 				product:[1,2,3,4,5],
-				bannnerimgs:''
+				bannnerimgs:'',
+				goodList:[]
 			}
 		},
 		methods:{
-			menuclick(i){
-				this.Tabindex=i;
+			menuclick(item,index){
+				this.Tabindex=index;
+				this.goodList='';
+				uni.showLoading({
+					title: '加载中...',
+					mask: false
+				});
+				uni.request({
+					url: 'http://appserver.wujie520.cn/thirdreturn/index/salesvolume?page=1&sort_type='+item.num,
+					method: 'GET',
+					data: {},
+					success: res => {
+						uni.hideLoading();
+						console.log(res.data)
+						this.goodList=res.data.goods_search_response.goods_list;
+						uni.hideLoading();
+					}
+				});
 			},
 			bannerimg(){
 				uni.request({
@@ -64,21 +84,39 @@
 					}
 				});
 			},
-			
 			testdata(){
 				uni.navigateTo({
 					url: '../productmess/productmess?id=3762335246',
+				});
+			},
+			goodLists(){
+				 uni.request({
+					url: 'http://appserver.wujie520.cn/thirdreturn/index/salesvolume?page=1&sort_type=0',
+					method: 'GET',
+					data: {},
+					success: res => {
+						uni.hideLoading();
+						console.log(res.data)
+						this.goodList=res.data.goods_search_response.goods_list;
+					}
+				});
+			},
+			goods(i){
+				uni.navigateTo({
+					url: '../productmess/productmess?id='+i.goods_id
 				});
 			}
 		},
 		// #ifdef H5
 		onShow() {
-			this.bannerimg()
+			this.bannerimg();
+			this.goodLists();
 		},
 		// #endif
 	   onLoad:function(e){
 		   console.log(e);
 	   	   this.bannerimg();
+		   this.goodLists();
 	   }
 	}
 </script>
@@ -119,13 +157,14 @@
 		background-color: #EEEEEE;
 	}
 	/*  */
-	.productList{
+	.porduct .productList{
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		margin-bottom: 20upx;
 	}
-	.productList>image{
+	.porduct .productList>image{
 		width: 28%;
 		height: 160upx;
 	}

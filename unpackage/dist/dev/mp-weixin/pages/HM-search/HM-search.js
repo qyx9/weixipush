@@ -221,7 +221,7 @@ __webpack_require__.r(__webpack_exports__);
       this.isShowKeywordList = true;
       //以下示例截取淘宝的关键字，请替换成你的接口
       uni.request({
-        url: 'https://suggest.taobao.com/sug?code=utf-8&q=' + keyword, //仅为示例
+        url: 'http://appserver.wujie520.cn/thirdreturn/index/searchgoods?key_word=' + keyword + '&page=1', //仅为示例http://appserver.wujie520.cn/thirdreturn/index/searchgoods?key_word=海苔&page=1
         success: function success(res) {
           _this2.keywordList = _this2.drawCorrelativeKeyword(res.data.result, keyword);
         } });

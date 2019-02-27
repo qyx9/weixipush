@@ -56,9 +56,7 @@
 				uni.hideLoading();
 				console.log(res.data)
 				this.goodList=res.data.goods_search_response.goods_list;
-           	},
-           	fail: () => {},
-           	complete: () => {}
+           	}
            });
 		},
 		methods: {

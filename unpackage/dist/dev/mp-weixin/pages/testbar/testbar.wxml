@@ -1,0 +1,2 @@
+<import src="./testbar.vue.wxml" />
+    <template is="e412dbb2" data="{{ ...$root['0'], $root }}"/>

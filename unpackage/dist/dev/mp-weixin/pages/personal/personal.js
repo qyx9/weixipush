@@ -333,7 +333,8 @@ var _default = {
       defualtImg: '../../static/girl.png',
       iconimg: false,
       userInfo: "",
-      mess: false };
+      mess: false,
+      parentid: '' };
 
   },
   onLoad: function onLoad() {
@@ -343,7 +344,7 @@ var _default = {
         console.log(res.authSetting);
       } });
 
-
+    this.parentid = uni.getStorageSync('partId');
   },
   methods: {
     mymoneys: function mymoneys() {var _this = this;
@@ -376,7 +377,7 @@ var _default = {
       var userimgUrl = result.mp.detail.userInfo.avatarUrl;
       uni.setStorageSync('userimgUrl', userimgUrl);
       this.userImg = uni.getStorageSync('userimgUrl');
-      uni.setStorageSync('userName', this.userName);
+      uni.setStorageSync('userName', result.mp.detail.userInfo.nickName);
       if (result.detail.errMsg !== 'getUserInfo:ok') {
         uni.showModal({
           title: '获取用户信息失败',
@@ -398,18 +399,21 @@ var _default = {
                 console.log(JSON.parse(res.data));
                 var weixiOpenId = JSON.parse(res.data).openid;
                 uni.setStorageSync('weixiOpenId', weixiOpenId);
+                console.log('获取到openid', weixiOpenId);
                 var name = uni.getStorageSync('userName');
+                console.log("获取到userName", name);
                 var parentid = uni.getStorageSync('partId');
+                console.log("获取到partId", parentid);
                 uni.request({
-                  url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid=' + weixiOpenId + '&name=' + name + '&parentid=' + parentid,
+                  url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid=' + weixiOpenId + '&name=' + name + '&parentid=' + that.parentid,
                   method: 'GET',
                   success: function success(res) {
-                    console.log(res.data);
+                    console.log("返回的数据:", res.data);
                     uni.setStorageSync("userId", res.data.data.user_id);
                     that.userId = res.data.data.user_id;
                     uni.setStorageSync("parentId", res.data.data.parent_id);
-                    // 										that.mymoneys();
-                    // 										that.feshi();
+                    that.mymoneys();
+                    that.feshi();
                   } });
 
               } });
@@ -441,6 +445,10 @@ var _default = {
       uni.navigateTo({
         url: '../ordermess/ordermess?id=15' });
 
+    },
+    // 添加用户
+    adduser: function adduser() {
+
     } },
 
 
@@ -454,6 +462,8 @@ var _default = {
     this.userId = uni.getStorageSync('userId');
     this.userName = uni.getStorageSync('userName');
     this.userImg = uni.getStorageSync('userimgUrl');
+    // 获取partid
+    this.parentid = uni.getStorageSync('partId');
   },
   onTabItemTap: function onTabItemTap() {
     this.mymoneys();
@@ -556,7 +566,7 @@ var render = function() {
                     },
                     on: { getuserinfo: _vm.mpGetUserInfo }
                   },
-                  [_vm._v("获取微信用户信息")]
+                  [_vm._v("登录到小程序")]
                 )
               : _vm._e(),
             _vm.userName != ""

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"comproduct","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"navigationBarTitleText":"首页"}},"pages/bar/bar.html":{"window":{"navigationBarTitleText":"热销"}},"pages/market/market.html":{"window":{"navigationBarTitleText":"全网热销"}},"pages/circle/circle.html":{"window":{"navigationBarTitleText":"多客圈"}},"pages/personal/personal.html":{"window":{"navigationBarTitleText":"个人中心","navigationBarBackgroundColor":"#101013","navigationBarTextStyle":"white"}},"pages/HM-search/HM-search.html":{"window":{"navigationBarTitleText":"搜索"}},"pages/productmess/productmess.html":{"window":{"navigationBarTitleText":"产品详情"}},"pages/pddweb/pddweb.html":{"window":{}},"pages/login/login.html":{"window":{"navigationBarTitleText":"用户登录"}},"pages/ordermess/ordermess.html":{"window":{"navigationBarTitleText":"订单详情"}},"pages/testbar/testbar.html":{"window":{"navigationBarTitleText":"testbar"}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#FFD305","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"#8a8a8a","selectedColor":"#1296db","backgroundColor":"#F8F8F8","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/home.png","selectedIconPath":"static/home2.png","text":"首页"},{"pagePath":"pages/bar/bar.html","iconPath":"static/bar.png","selectedIconPath":"static/bar2.png","text":"多客热销"},{"pagePath":"pages/market/market.html","iconPath":"static/market2.png","selectedIconPath":"static/market.png","text":"全网热销"},{"pagePath":"pages/circle/circle.html","iconPath":"static/circle.png","selectedIconPath":"static/circle2.png","text":"多客圈"},{"pagePath":"pages/personal/personal.html","iconPath":"static/person2.png","selectedIconPath":"static/person.png","text":"个人中心"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/bar/bar","pages/market/market","pages/circle/circle","pages/personal/personal","pages/HM-search/HM-search","pages/productmess/productmess","pages/pddweb/pddweb","pages/login/login","pages/ordermess/ordermess","pages/testbar/testbar"],"subPackages":[],"usingComponents":{},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false}}
+
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+            };
+
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

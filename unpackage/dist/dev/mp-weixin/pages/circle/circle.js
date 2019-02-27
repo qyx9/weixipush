@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
 
 
@@ -140,9 +140,26 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
   },
   methods: {
-    share: function share() {
+    shareimg: function shareimg() {
+      // 发起用户授权
+      uni.getSetting({
+        success: function success(res) {
+          if (!res.authSetting['scope.writePhotosAlbum']) {
+            uni.authorize({
+              scope: 'scope.writePhotosAlbum',
+              success: function success() {
+                console.log('授权成功');
+              } });
+
+          } else {
+            uni.navigateTo({
+              url: '../shareimg/shareimg' });
+
+          }
+        } });
 
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -185,7 +202,7 @@ var render = function() {
             {
               staticClass: "right",
               attrs: { eventid: "21e0a4ba-0" },
-              on: { click: _vm.share }
+              on: { click: _vm.shareimg }
             },
             [_vm._v("一键分享")]
           )

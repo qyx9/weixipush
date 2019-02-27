@@ -171,9 +171,7 @@ __webpack_require__.r(__webpack_exports__);
         uni.hideLoading();
         console.log(res.data);
         _this.goodList = res.data.goods_search_response.goods_list;
-      },
-      fail: function fail() {},
-      complete: function complete() {} });
+      } });
 
   },
   methods: {

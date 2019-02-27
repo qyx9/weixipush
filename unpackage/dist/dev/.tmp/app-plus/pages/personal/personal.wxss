@@ -1,0 +1,261 @@
+
+.personal {
+	height: 4000rpx;
+	background-color:#EEEEEE;
+}
+.userinfo{
+	width: 100%;
+	height: 300rpx;
+	background:url(data:image/png;base64,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);
+}
+.perMenu{
+	width: 100%;
+	height: 154rpx;
+	background-color: #FFFFFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-bottom: 20rpx;
+}
+/* 提现 */
+.perMenu .setMenu{
+	width: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	text-align: left;
+}
+.perMenu .mingxi{
+	width: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.mingxi>view{
+	width: 40%;
+	text-align: center;
+	font-size: 30rpx;
+	height: 40rpx;
+	margin: 0 10rpx;
+	border:2rpx solid #DC505D;
+}
+.mingxi>view:nth-child(2){
+	background-color: #DC505D;
+	color:#FFFFFF;
+	border-radius: 10rpx;
+}
+.like>image{
+	width: 100%;
+	height: 46rpx;
+}
+.maybelike{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 100%;
+	padding: 10rpx 2%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:row;
+	    -ms-flex-direction:row;
+	        flex-direction:row;
+	-webkit-flex-wrap:wrap;
+	    -ms-flex-wrap:wrap;
+	        flex-wrap:wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.rempro{
+	width: 48%;
+	height: 268rpx;
+	background-color: blue;
+	border-radius: 10rpx;
+	margin-bottom: 20rpx;
+}
+/* userone */
+.userchanse{
+	width: 100%;
+	height: 150rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	color: #CCCCCC;
+}
+.userList{
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+	width: 50%;
+	height: 150rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.userList>image{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	margin-right: 20rpx;
+}
+.usernames{
+	font-size:32rpx;
+	width: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:column;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.loginBind{
+	font-size:24rpx;
+	width: 50%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.loginBind>image{
+	width: 60rpx;
+	height: 60rpx;
+}
+/* user two */
+.accountBalance{
+	width: 50%;
+	height: 150rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.accountBalance>text:first-child{
+	font-size: 32rpx;
+}
+.accountBalance>text:nth-child(2){
+	color: red;
+	font-size: 64rpx;
+}
+.rests{
+	width: 50%;
+	height: 150rpx;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:row;
+	    -ms-flex-direction:row;
+	        flex-direction:row;
+}
+.rests>.accountBalance{
+	font-size: 24rpx;
+}
+.rests>.accountBalance:nth-child(2){
+	border-left: 2rpx solid #555555;
+	height: 100rpx;
+}
+/* 可提现金额 */
+.setMenuMsg{
+	width: 48%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+/* 用户管理 */
+.usermangent{
+	width: 100%;
+	height:120rpx;
+	background-color: #FFFFFF;
+	margin-bottom: 20rpx;
+}
+

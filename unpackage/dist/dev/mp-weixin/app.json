@@ -7,9 +7,12 @@
     "pages/personal/personal",
     "pages/HM-search/HM-search",
     "pages/productmess/productmess",
-    "pages/pddweb/pddweb",
     "pages/login/login",
-    "pages/ordermess/ordermess"
+    "pages/ordermess/ordermess",
+    "pages/testbar/testbar",
+    "pages/shareimg/shareimg",
+    "pages/glance-glanceShopClassify/glance-glanceShopClassify",
+    "pages/gooList/gooList"
   ],
   "subPackages": [],
   "window": {

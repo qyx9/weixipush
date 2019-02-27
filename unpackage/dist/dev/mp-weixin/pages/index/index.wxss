@@ -84,6 +84,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* bannerimg */
 .recommend .bannerimg>image{
 	width: 100%;
@@ -140,7 +178,7 @@
 	background-color: #EEEEEE;
 }
 /*  */
-.productList{
+.porduct .productList{
 	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -155,8 +193,9 @@
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
+	margin-bottom: 20rpx;
 }
-.productList>image{
+.porduct .productList>image{
 	width: 28%;
 	height: 160rpx;
 }
@@ -165,11 +204,104 @@
 	height: 160rpx;
 }
 
-
-.descposit{
-	position: fixed;
-	top:180rpx;
-	width: 100%;
+.descposit {
+  position: fixed;
+  top: 180rpx;
+  width: 100%;
+}
+.goodLM {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 20rpx;
+}
+.goodLM > image {
+  width: 28%;
+  height: 160rpx;
+}
+.goodLM .goodLmdesc {
+  width: 72%;
+  height: 160rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 24rpx;
+}
+.goodLM .goodLmdesc .title {
+  height: 64rpx;
+}
+.goodLM .goodLmdesc .juan {
+  width: 100%;
+  height: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.goodLM .goodLmdesc .ling {
+  width: 100%;
+  height: 72rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.goodLM .goodLmdesc .ling .yuan {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.goodLM .goodLmdesc .ling .tiao {
+  width: 40%;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: -webkit-gradient(linear, left top, right top, from(#FFCB00), to(#FEA513));
+  background: -o-linear-gradient(left, #FFCB00, #FEA513);
+  background: linear-gradient(to right, #FFCB00, #FEA513);
+  border-radius: 12rpx;
+  color: #ffffff;
 }
 
 

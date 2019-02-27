@@ -448,7 +448,9 @@ var render = function() {
       ),
       _c("view", { staticClass: "jiage" }, [
         _c("view", { staticClass: "jflex" }, [
-          _c("text", [_vm._v("劵￥0")]),
+          _c("text", [
+            _vm._v("劵￥" + _vm._s(_vm.data.coupon_min_order_amount / 100))
+          ]),
           _c("text", [
             _vm._v("原价￥" + _vm._s(_vm.data.min_normal_price / 100))
           ])
@@ -488,9 +490,25 @@ var render = function() {
       ),
       _c("view", { staticClass: "rollCount" }, [
         _c("text", [
-          _vm._v("总优惠卷" + _vm._s(_vm.data.coupon_total_quantity))
+          _vm._v(
+            "总优惠卷" +
+              _vm._s(
+                _vm.data.coupon_total_quantity == null
+                  ? 0
+                  : _vm.data.coupon_total_quantity
+              )
+          )
         ]),
-        _c("text", [_vm._v("剩余张" + _vm._s(_vm.data.coupon_remain_quantity))])
+        _c("text", [
+          _vm._v(
+            "剩余张" +
+              _vm._s(
+                _vm.data.coupon_remain_quantity == null
+                  ? 0
+                  : _vm.data.coupon_remain_quantity
+              )
+          )
+        ])
       ]),
       _c("view", { staticClass: "goodscore" }, [
         _c("view", { staticClass: "scoretitle" }, [
@@ -557,7 +575,11 @@ var render = function() {
             attrs: { eventid: "0d5bb31a-2" },
             on: { click: _vm.lookall }
           },
-          [_c("text", [_vm._v("查看全部>")])]
+          [
+            _c("text", [
+              _vm._v(_vm._s(_vm.look == false ? "查看全部>" : "收起评论V"))
+            ])
+          ]
         )
       ]),
       _c(
@@ -579,7 +601,7 @@ var render = function() {
         "view",
         { staticClass: "gooddesc" },
         [
-          _c("view", [_c("text", [_vm._v(_vm._s(_vm.data.goods_name))])]),
+          _c("view", [_c("text", [_vm._v(_vm._s(_vm.data.goods_desc))])]),
           _vm._l(_vm.bannerdata, function(item, index) {
             return _c("view", { key: index, staticClass: "descimg" }, [
               _c("image", {

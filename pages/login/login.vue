@@ -10,11 +10,12 @@
 		data(){
 			return{
 				userImg:'',
-				userName:''
+				userName:'',
+				parentid:''
 			}
 		},
 		onLoad() {
-		   
+		   this.parentid=uni.getStorageSync('partId');
 		 },
 		methods:{
 			logins(){
@@ -31,7 +32,7 @@
 			uni.setStorageSync('userimgUrl',userimgUrl)
 			this.userImg=uni.getStorageSync('userimgUrl');
 			// 存储用户昵称
-			uni.setStorageSync('userName',this.userName);
+			uni.setStorageSync('userName',result.mp.detail.userInfo.nickName);
 			if (result.detail.errMsg !== 'getUserInfo:ok') {
 				uni.showModal({
 					title: '获取用户信息失败',
@@ -54,17 +55,21 @@
 							console.log(JSON.parse(res.data))
 							let weixiOpenId=JSON.parse(res.data).openid;
 							// 存储openid
+							console.log('请求到openid',weixiOpenId);
 							uni.setStorageSync('weixiOpenId',weixiOpenId);
 							let name=uni.getStorageSync('userName');
-							let parentid=uni.getStorageSync('partId');
+							console.log('请求到name',name);
+							var parentid=uni.getStorageSync('partId');
+							console.log('请求到partId',parentid);
 							uni.request({
-								url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid='+weixiOpenId+'&name='+name+'&parentid='+parentid,
+								url: 'http://appserver.wujie520.cn/thirdreturn/index/wxlogin?openid='+weixiOpenId+'&name='+name+'&parentid='+that.parentid,
 								method: 'GET',
 								success: res => {
-									console.log(res.data)
+									console.log("返回的数据:",res.data)
 									uni.setStorageSync("userId",res.data.data.user_id);
 									that.userId=res.data.data.user_id;
 									uni.setStorageSync("parentId",res.data.data.parent_id);
+									// 返回原页面
 									uni.navigateBack();
 								}
 							});
@@ -77,6 +82,9 @@
 			this.userInfo = result.detail.userInfo;
 			console.log(this.userInfo)
 		}
+	},
+	onShow() {
+		this.parentid=uni.getStorageSync('partId');
 	}
 	}
 </script>

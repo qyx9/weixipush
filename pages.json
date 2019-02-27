@@ -45,9 +45,6 @@
 			}
 		},
 		{
-			"path":"pages/pddweb/pddweb"
-		},
-		{
 			"path":"pages/login/login",
 			"style":{
 				"navigationBarTitleText":"用户登录"
@@ -57,6 +54,30 @@
 			"path":"pages/ordermess/ordermess",
 			"style":{
 				"navigationBarTitleText":"订单详情"
+			}
+		},
+		{
+			"path":"pages/testbar/testbar",
+			"style":{
+				"navigationBarTitleText":"testbar"
+			}
+		},
+		{
+			"path":"pages/shareimg/shareimg",
+			"style":{
+				"navigationBarTitleText":"shareimg"
+			}
+		},
+		{
+			"path":"pages/glance-glanceShopClassify/glance-glanceShopClassify",
+			"style":{
+				"navigationBarTitleText":"glance-glanceShopClassify"
+			}
+		},
+		{
+			"path":"pages/gooList/gooList",
+			"style":{
+				"navigationBarTitleText":"goodList"
 			}
 		}
 	],

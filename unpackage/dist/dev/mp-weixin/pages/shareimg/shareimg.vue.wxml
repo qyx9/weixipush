@@ -1,0 +1,1 @@
+<import src="/components/picture-tailor/pictureTailor.vue.wxml" /><template name="0c9df263"><view class="_view 0c9df263 shareimg"><image src="{{imgurl}}" mode="widthFix" class="_image 0c9df263"></image><template data="{{...$root['0'], ...$root[$kk+'0c9df263-0'],$root}}" is="2d1097fc"></template></view></template>

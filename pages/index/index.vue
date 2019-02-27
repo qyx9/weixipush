@@ -14,14 +14,14 @@
 		</view>
 		<!-- submenu -->
 		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x >
-			<view v-for="(tab,index) in data" :key="index" :class="['swiper-tab-list',tabIndex==index ? 'active' : '']"
-			 :id="index" :data-current="index" @click="tapTab(index)">{{tab.name}}</view>
+			<view v-for="(tab,index) in tabmenus" :key="index" :class="['swiper-tab-list',tabIndex==index ? 'active' : '']"
+			 :id="index" :data-current="index" @click="tapTab(tab,index)">{{tab.opt_name}}</view>
 		</scroll-view>
 		<!-- submenu list -->
 		<scroll-view class="list" v-for="(item,index) in msg" v-if="tabIndex==index" :key="index" scroll-y >
 		     <recom-day v-if="index===0"></recom-day>
-			 <food-list v-if="index===1"></food-list>
-			 <infant-bady v-if="index===2"></infant-bady>
+			 <food-list :propsdata='propsdata' :propsdata2="propsdata2" v-if="index===1"></food-list>
+			 <infant-bady :propsdata='propsdata'  v-if="index===2"></infant-bady>
 			 <fruits-list v-if="index===3"></fruits-list>
 			 <costume-list v-if="index===4"></costume-list>
 	    </scroll-view>
@@ -89,6 +89,9 @@
 				userId:5,
 				shareId:'',
 				userName:'0',
+				tabmenus:[],
+				propsdata:'',
+				propsdata2:''
 		
 			}
 		},
@@ -97,6 +100,7 @@
 			
 			let result=e;
 			uni.setStorageSync('partId',e.id);
+			console.log("分享的id",uni.getStorageSync('partId'));
 			let openid=uni.getStorageSync('weixiOpenId');
 			if(openid==''){
 			uni.showModal({
@@ -115,16 +119,23 @@
 			}
 			let  that=this
 			this.userName=uni.getStorageSync('userName')
+			this.tabmenuList();
 		},
-		onPageScroll() {
-			uni.createSelectorQuery().selectViewport().scrollOffset(res => {
-			  if(res.scrollTop>480){
-				  this.topbolen=true;
-			  }
-			  else{
-				  this.topbolen=false;
-			  }
-			}).exec();
+		onPageScroll(e) {
+			 if(e.scrollTop>480){
+				this.topbolen=true;
+			}
+			else{
+			   this.topbolen=false;
+			}
+// 			uni.createSelectorQuery().selectViewport().scrollOffset(res => {
+// 			  if(res.scrollTop>480){
+// 				  this.topbolen=true;
+// 			  }
+// 			  else{
+// 				  this.topbolen=false;
+// 			  }
+// 			}).exec();
 		},
 		methods: {
            searchbox(){
@@ -132,10 +143,23 @@
 			   	url: '../HM-search/HM-search'
 			   });
 		   },
-		   tapTab(i){
+		   tapTab(t,i){
 			   this.tabIndex=i;
+			   var optId=t.opt_id;
 			   console.log(this.tabIndex)
-			   
+			   uni.request({
+			   	url: 'http://appserver.wujie520.cn/thirdreturn/index/classgoods?class_id='+t.opt_id+'&page=1&is_sub=1&prent_id='+t.opt_id,
+			   	method: 'GET',
+			   	data: {},
+			   	success: res => {
+					console.log(res.data)
+					this.propsdata=res.data[0].goods_opt_get_response.goods_opt_list.splice(0,9);
+					this.propsdata.push({opt_name:'查看更多',topTid:optId});
+					this.propsdata2=res.data[1].goods_search_response.goods_list;
+				},
+			   	fail: () => {},
+			   	complete: () => {}
+			   });
 			  uni.pageScrollTo({
 					scrollTop: 0,
 					duration: 10
@@ -149,12 +173,29 @@
 		   },
 		   changeTab(e){
 			   console.log(e)
+		   },
+		   // 菜单目录
+		   tabmenuList(){
+			   uni.request({
+			   	url: 'http://appserver.wujie520.cn/thirdreturn/index/goodsopt',
+			   	method: 'GET',
+			   	data: {},
+			   	success: res => {
+					console.log(res.data);
+					this.tabmenus=res.data.goods_opt_get_response.goods_opt_list;
+				},
+			   	fail: () => {},
+			   	complete: () => {}
+			   });
 		   }
+		   
 		},
+		// 分享的id
 		onShareAppMessage(){
+			var id=uni.getStorageSync('userId');
 			return {
 				  title: '自定义转发标题',
-				  path: 'pages/index/index?ider=0&id='+this.userId
+				  path: 'pages/index/index?ider=0&id='+id
 				}
 		},
 		onTabItemTap(){
